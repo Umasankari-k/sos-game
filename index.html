@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Game</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HOME ================= -->
+
+    <section id="homeScreen" class="screen active">
+        <div class="container">
+
+            <div class="logo">SOS</div>
+
+            <div class="subtitle">
+                Strategic Letter Board Game
+            </div>
+
+            <button id="startGameBtn" class="main-btn">
+                START GAME
+            </button>
+
+            <button id="historyBtn" class="secondary-btn">
+                WINNER HISTORY
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- ================= DIFFICULTY ================= -->
+
+    <section id="difficultyScreen" class="screen">
+        <div class="container">
+
+            <div class="panel">
+
+                <div class="title">
+                    SELECT DIFFICULTY
+                </div>
+
+                <div class="description">
+                    Choose how challenging the computer should be.
+                </div>
+
+                <div class="difficulty-container">
+
+                    <button class="difficulty-btn" data-difficulty="easy">
+                        <h3>EASY</h3>
+                        <p>
+                            Basic strategy with simple moves.
+                        </p>
+                    </button>
+
+                    <button class="difficulty-btn" data-difficulty="medium">
+                        <h3>MEDIUM</h3>
+                        <p>
+                            Scores opportunities and blocks you.
+                        </p>
+                    </button>
+
+                    <button class="difficulty-btn" data-difficulty="hard">
+                        <h3>HARD</h3>
+                        <p>
+                            Looks ahead and plans stronger moves.
+                        </p>
+                    </button>
+
+                </div>
+
+                <button id="difficultyBackBtn" class="secondary-btn">
+                    BACK
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= SETUP ================= -->
+
+    <section id="setupScreen" class="screen">
+        <div class="container">
+
+            <div class="panel">
+
+                <div class="title">
+                    BOARD SETUP
+                </div>
+
+                <div class="description">
+                    Choose the number of rows and columns.
+                </div>
+
+                <div class="form-group">
+                    <label for="rowsInput">Rows</label>
+                    <input id="rowsInput" type="number" min="3" max="10" value="3">
+                </div>
+
+                <div class="form-group">
+                    <label for="colsInput">Columns</label>
+                    <input id="colsInput" type="number" min="3" max="10" value="3">
+                </div>
+
+                <button id="beginGameBtn" class="main-btn">
+                    BEGIN GAME
+                </button>
+
+                <button id="setupBackBtn" class="secondary-btn">
+                    BACK
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= GAME ================= -->
+
+    <section id="gameScreen" class="screen">
+
+        <div class="game-container">
+
+            <div class="game-header">
+
+                <div>
+                    <div class="game-title">SOS</div>
+                    <div class="difficulty-label">
+                        Difficulty:
+                        <span id="difficultyDisplay">Easy</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="score-container">
+
+                <div class="score-box">
+                    <h3>YOU</h3>
+                    <span id="playerScore">0</span>
+                </div>
+
+                <div class="score-box">
+                    <h3>COMPUTER</h3>
+                    <span id="computerScore">0</span>
+                </div>
+
+            </div>
+
+            <div id="turnIndicator" class="turn">
+                Your Turn
+            </div>
+
+            <div class="letter-selection">
+
+                <span>Choose:</span>
+
+                <button class="letter-btn selected" data-letter="S">
+                    S
+                </button>
+
+                <button class="letter-btn" data-letter="O">
+                    O
+                </button>
+
+            </div>
+
+            <div id="gameBoard"></div>
+
+            <div class="game-controls">
+
+                <button id="restartBtn" class="small-btn">
+                    RESTART
+                </button>
+
+                <button id="gameHomeBtn" class="small-btn">
+                    HOME
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GAME OVER ================= -->
+
+    <section id="gameOverScreen" class="screen">
+
+        <div class="container">
+
+            <div class="panel">
+
+                <div id="winnerIcon" class="result-icon">
+                    🏆
+                </div>
+
+                <div id="gameResult" class="result-title">
+                    GAME OVER
+                </div>
+
+                <div class="final-score">
+
+                    Your Score:
+                    <strong id="finalPlayerScore">0</strong>
+                    <br>
+
+                    Computer Score:
+                    <strong id="finalComputerScore">0</strong>
+
+                </div>
+
+                <button id="playAgainBtn" class="main-btn">
+                    PLAY AGAIN
+                </button>
+
+                <button id="gameOverHomeBtn" class="secondary-btn">
+                    HOME
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HISTORY ================= -->
+
+    <section id="historyScreen" class="screen">
+
+        <div class="container">
+
+            <div class="panel">
+
+                <div class="title">
+                    WINNER HISTORY
+                </div>
+
+                <div class="description">
+                    Your latest 5 victories
+                </div>
+
+                <div id="historyList" class="history-list"></div>
+
+                <button id="historyBackBtn" class="secondary-btn">
+                    BACK
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div id="toast" class="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
